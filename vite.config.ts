@@ -18,6 +18,13 @@ export default defineConfig(({ command }) => {
           "@my/scoreboard": resolve(__dirname, "lib/main.ts"), // Alias for library import
         },
       },
+      test: {
+        environment: "jsdom",
+        globals: true,
+        setupFiles: "./tests/setup.ts",
+        include: ["../lib/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
+        exclude: ["../example"],
+      },
     };
   }
 
@@ -30,9 +37,9 @@ export default defineConfig(({ command }) => {
     build: {
       lib: {
         entry: resolve(__dirname, "lib/main.ts"),
-        name: "MyLib",
+        name: "Scoreboard",
         formats: ["es"],
-        fileName: "my-lib",
+        fileName: "main",
       },
       rollupOptions: {
         external: ["react", "react/jsx-runtime"],
