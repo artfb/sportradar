@@ -1,11 +1,25 @@
 {
-  "name": "scoreboard",
+  "name": "@local/scoreboard",
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "main": "dist/main.js",
+  "types": "dist/main.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/main.d.ts",
+      "default": "./dist/main.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": [
+    "**/*.css"
+  ],
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc --p ./tsconfig.lib.json && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
@@ -15,6 +29,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.13.0",
+    "@types/node": "^22.7.9",
     "@types/react": "^18.3.11",
     "@types/react-dom": "^18.3.1",
     "@vitejs/plugin-react": "^4.3.3",
@@ -23,10 +38,13 @@
     "eslint-plugin-prettier": "^5.2.1",
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-react-refresh": "^0.4.13",
+    "glob": "^11.0.0",
     "globals": "^15.11.0",
     "prettier": "3.3.3",
     "typescript": "~5.6.2",
     "typescript-eslint": "^8.10.0",
-    "vite": "^5.4.9"
+    "vite": "^5.4.9",
+    "vite-plugin-dts": "^4.3.0",
+    "vite-plugin-lib-inject-css": "^2.1.1"
   }
 }
