@@ -21,10 +21,13 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true,
 
+    /* Vitest */
+    "types": ["vitest/globals", "@testing-library/jest-dom"],
+
     "baseUrl": "./",
     "paths": {
       "@my/scoreboard": ["lib/main.ts"]
     }
   },
-  "include": ["example", "lib"]
+  "include": ["example", "lib", "tests"]
 }

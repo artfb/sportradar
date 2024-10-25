@@ -16,12 +16,13 @@ export default defineConfig(({ command }) => {
       resolve: {
         alias: {
           "@my/scoreboard": resolve(__dirname, "lib/main.ts"), // Alias for library import
+          tests: resolve(__dirname, "tests"), // Alias for library import
         },
       },
       test: {
         environment: "jsdom",
         globals: true,
-        setupFiles: "./tests/setup.ts",
+        setupFiles: "../tests/setup.ts",
         include: ["../lib/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
         exclude: ["../example"],
       },
