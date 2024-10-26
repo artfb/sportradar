@@ -6,5 +6,5 @@ export type Match = {
   awayScore: number;
   entryTimestamp: Date; // Assuming timestamp as Date object
   duration: number; // In minutes
-  status: "pending" | "active" | "paused" | "completed";
+  status: "active" | "completed";
 };

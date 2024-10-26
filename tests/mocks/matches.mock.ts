@@ -1,13 +1,13 @@
-import { Match } from "lib/components/Scoreboard/types";
+import { Match } from "lib/types";
 
-export const matches: Match[] = [
+export const mockMatches: Match[] = [
   {
     id: 1,
     homeTeam: "Mexico",
     awayTeam: "Canada",
     homeScore: 0,
     awayScore: 5,
-    entryTimestamp: new Date(),
+    entryTimestamp: new Date("2024-10-24T15:30:00Z"),
     duration: 90,
     status: "completed",
   },
@@ -17,8 +17,8 @@ export const matches: Match[] = [
     awayTeam: "Brazil",
     homeScore: 10,
     awayScore: 2,
-    entryTimestamp: new Date(),
-    duration: 45,
+    entryTimestamp: new Date("2024-10-24T16:00:00Z"),
+    duration: 65,
     status: "active",
   },
 ];
