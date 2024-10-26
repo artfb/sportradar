@@ -34,12 +34,12 @@ describe("Scoreboard component", () => {
     expect(heading).toBeInTheDocument();
   });
 
-  it("should display completed matched in order", () => {
+  it("should display completed matches in order", () => {
     render(<Scoreboard matches={completedMock} />);
 
     const summary = screen.getByTestId("completed-summary");
 
-    const expectedOrder = ["Spain 10 - Brazil 0", "Mexico 5 - Canada 5"];
+    const expectedOrder = ["Mexico 5 - Canada 5", "Spain 10 - Brazil 0"];
 
     expectedOrder.forEach((expectedText, index) => {
       expect(summary.children[index]).toHaveTextContent(expectedText);

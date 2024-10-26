@@ -1,11 +1,15 @@
 import { Match } from "lib/types";
 
-export const getSummary = (matches: Match[]) => {
+export const getSummary = (
+  matches: Match[],
+  sortFn?: (a: Match, b: Match) => number,
+) => {
   return matches
     .slice()
     .sort(
       (a, b) =>
         b.homeScore + b.awayScore - (a.homeScore + a.awayScore) ||
-        b.entryTimestamp.getTime() - a.entryTimestamp.getTime(),
+        sortFn?.(a, b) ||
+        b.entryTimestamp - a.entryTimestamp,
     );
 };

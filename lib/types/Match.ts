@@ -4,7 +4,7 @@ export type Match = {
   awayTeam: string;
   homeScore: number;
   awayScore: number;
-  entryTimestamp: Date; // Assuming timestamp as Date object
+  entryTimestamp: number; // Timestamp
   duration: number; // In minutes
   status: "active" | "completed";
 };

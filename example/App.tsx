@@ -1,9 +1,8 @@
 import "./App.css";
-import { Scoreboard } from "@my/scoreboard";
-import { mockMatches } from "./data/matches";
+import { Scorecontrol } from "@my/scoreboard";
 
 function App() {
-  return <Scoreboard matches={mockMatches} />;
+  return <Scorecontrol />;
 }
 
 export default App;

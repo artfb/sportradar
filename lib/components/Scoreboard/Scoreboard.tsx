@@ -1,7 +1,7 @@
 import { Match } from "../../types";
 import styles from "./styles.module.css";
-import { MatchRow } from "./MatchRow";
-import { getSummary } from "../../utils/getSummary";
+import { MatchRow } from "../MatchRow";
+import { getSummary } from "../../utils";
 
 type ScoreboardProps = {
   matches: Match[];
@@ -27,7 +27,7 @@ export function Scoreboard(props: ScoreboardProps) {
 
       <h2>Completed Matches</h2>
       <div data-testid="completed-summary">
-        {getSummary(completedMatches).map((match) => (
+        {getSummary(completedMatches, (a, b) => a.id - b.id).map((match) => (
           <MatchRow match={match} key={match.id} />
         ))}
       </div>
